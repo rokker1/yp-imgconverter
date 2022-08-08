@@ -47,6 +47,18 @@ bool SaveBMP(const Path& file, const Image& image) {
     out.write(reinterpret_cast<const char*>(&(info_header.y_ppm)), sizeof(info_header.y_ppm));
     out.write(reinterpret_cast<const char*>(&(info_header.colors_in_color_table)), sizeof(info_header.colors_in_color_table));
     out.write(reinterpret_cast<const char*>(&(info_header.important_color_count)), sizeof(info_header.important_color_count));
+
+    std::vector<char> buff (stride);
+    for(int y = h - 1; y > -1; --y) {
+        const Color* line = image.GetLine(y);
+        for (int x = 0; x < w; ++x) {
+            buff[x * 3 + 0] = static_cast<char>(line[x].b);
+            buff[x * 3 + 1] = static_cast<char>(line[x].g);
+            buff[x * 3 + 2] = static_cast<char>(line[x].r);
+        }
+        out.write(buff.data(), w * 3);
+    }
+
     return out.good();
 }
 
