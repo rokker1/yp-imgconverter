@@ -1,0 +1,11 @@
+prefix=/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/protobuf_package
+exec_prefix=/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/protobuf_package
+libdir=/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/protobuf_package/lib
+includedir=/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/protobuf_package/include
+
+Name: Protocol Buffers
+Description: Google's Data Interchange Format
+Version: 3.21.4.0
+Libs: -L${libdir} -lprotobuf-lite 
+Cflags: -I${includedir}
+Conflicts: protobuf

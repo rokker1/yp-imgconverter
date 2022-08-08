@@ -1,0 +1,10 @@
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/libprotobuf-lite.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/libprotobuf.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/libprotoc.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/protoc.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/edit_cache.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/rebuild_cache.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/list_install_components.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/install.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/install/local.dir
+/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/build_debug/CMakeFiles/install/strip.dir

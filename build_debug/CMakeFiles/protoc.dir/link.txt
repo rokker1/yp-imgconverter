@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/protoc.dir/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/protobuf-21.4/src/google/protobuf/compiler/main.cc.o -o protoc-3.21.4.0  -Wl,-rpath,:::::::::::::: libprotocd.a libprotobufd.a 

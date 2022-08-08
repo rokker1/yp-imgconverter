@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/imgconv.dir/main.cpp.o -o imgconv   -L/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/libjpeg/lib/Debug  -Wl,-rpath,/home/xu/source/yp-cpp/s14/4.protobuf/2.protobuf_install/libjpeg/lib/Debug ImgLibBuildDir/libImgLib.a -ljpeg 
