@@ -10,8 +10,8 @@ PACKED_STRUCT_BEGIN BitmapFileHeader {
         // поля заголовка Bitmap File Header
         const char signature[2] = {'B', 'M'};
         uint32_t file_size; // Суммарный размер заголовка и данных — 4 байта, беззнаковое целое. Размер данных определяется как отступ, умноженный на высоту изображения.
-        const uint32_t reserved_space = 0; // Зарезервированное пространство
-        uint32_t file_offset = 54; // Отступ данных от начала файла. равен размеру двух частей заголовка.
+        const uint32_t reserved_space = 0x000000; // Зарезервированное пространство
+        const uint32_t file_offset = 54; // Отступ данных от начала файла. равен размеру двух частей заголовка.
 }
 PACKED_STRUCT_END
 

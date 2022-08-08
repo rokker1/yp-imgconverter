@@ -100,15 +100,17 @@ int main(int argc, const char** argv) {
     img_lib::BitmapInfoHeader info_header;
     cerr << sizeof(file_header) << endl;
     cerr << sizeof(info_header) << endl;
-    if (argc != 3) {
-        cerr << "Usage: "sv << argv[0] << " <in_file> <out_file>"sv << endl;
+//    if (argc != 3) {
+//        cerr << "Usage: "sv << argv[0] << " <in_file> <out_file>"sv << endl;
+//
+//        return 1;
+//    }
 
-        return 1;
-    }
-
-    img_lib::Path in_path = argv[1];
-    img_lib::Path out_path = argv[2];
-
+//    img_lib::Path in_path = argv[1];
+//    img_lib::Path out_path = argv[2];
+    // debug
+    img_lib::Path in_path = "../../ImgConverterDebug/plato_bermamyt.ppm";
+    img_lib::Path out_path = "../../ImgConverterDebug/plato_bermamyt.bmp";
     const ImageFormatInterface* in_format_interface = GetFormatInterface(in_path);
     if (!in_format_interface) {
         cerr << "Unknown format of the input file"sv << endl;

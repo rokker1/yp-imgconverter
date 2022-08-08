@@ -30,3 +30,4 @@
 *.exe
 *.out
 *.app
+/ImgConverter/cmake-build-debug/
