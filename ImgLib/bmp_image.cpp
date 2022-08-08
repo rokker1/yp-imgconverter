@@ -48,15 +48,16 @@ bool SaveBMP(const Path& file, const Image& image) {
     out.write(reinterpret_cast<const char*>(&(info_header.colors_in_color_table)), sizeof(info_header.colors_in_color_table));
     out.write(reinterpret_cast<const char*>(&(info_header.important_color_count)), sizeof(info_header.important_color_count));
 
-    std::vector<char> buff (stride);
+    std::vector<char> buff (stride, '\0');
     for(int y = h - 1; y > -1; --y) {
         const Color* line = image.GetLine(y);
+
         for (int x = 0; x < w; ++x) {
             buff[x * 3 + 0] = static_cast<char>(line[x].b);
             buff[x * 3 + 1] = static_cast<char>(line[x].g);
             buff[x * 3 + 2] = static_cast<char>(line[x].r);
         }
-        out.write(buff.data(), w * 3);
+        out.write(buff.data(), stride);
     }
 
     return out.good();
@@ -64,7 +65,40 @@ bool SaveBMP(const Path& file, const Image& image) {
 
 // напишите эту функцию
 Image LoadBMP(const Path& file) {
-    return {};
+        ifstream ifs(file, ios::binary);
+        if(!ifs) {
+            return {};
+        }
+
+        BitmapFileHeader file_header;
+        BitmapInfoHeader info_header;
+
+        char buffer[54];
+        ifs.read(buffer, 54);
+        file_header.file_size = *reinterpret_cast<size_t*>(&(buffer[2]));
+        info_header.image_width = *reinterpret_cast<int*>(&(buffer[18]));
+        info_header.image_height = *reinterpret_cast<int*>(&(buffer[22]));
+        info_header.image_size = *reinterpret_cast<size_t*>(&(buffer[34]));
+
+        Image result(info_header.image_width, info_header.image_height, Color::Black());
+        int w = info_header.image_width;
+        int h = info_header.image_height;
+        int stride = GetBMPStride(w);
+        std::vector<char> buff(stride);
+
+        for(int y = h - 1; y > -1; --y) {
+            Color* line = result.GetLine(y);
+            ifs.read(buff.data(), stride);
+            for (int x = 0; x < w; ++x) {
+                line[x].b = static_cast<byte>(buff[x * 3 + 0]);
+                line[x].g = static_cast<byte>(buff[x * 3 + 1]);
+                line[x].r = static_cast<byte>(buff[x * 3 + 2]);
+            }
+        }
+
+
+
+    return result;
 }
 
 }  // namespace img_lib

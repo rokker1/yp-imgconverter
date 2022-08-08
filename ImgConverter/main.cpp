@@ -109,8 +109,8 @@ int main(int argc, const char** argv) {
 //    img_lib::Path in_path = argv[1];
 //    img_lib::Path out_path = argv[2];
     // debug
-    img_lib::Path in_path = "../../ImgConverterDebug/plato_bermamyt.ppm";
-    img_lib::Path out_path = "../../ImgConverterDebug/plato_bermamyt.bmp";
+    img_lib::Path in_path = "../../ImgConverterDebug/fox_.jpeg";
+    img_lib::Path out_path = "../../ImgConverterDebug/fox_.bmp";
     const ImageFormatInterface* in_format_interface = GetFormatInterface(in_path);
     if (!in_format_interface) {
         cerr << "Unknown format of the input file"sv << endl;
@@ -124,10 +124,10 @@ int main(int argc, const char** argv) {
     }
 
     img_lib::Image image = in_format_interface->LoadImage(in_path);
-    if (!image) {
-        cerr << "Loading failed"sv << endl;
-        return 4;
-    }
+//    if (!image) {
+//        cerr << "Loading failed"sv << endl;
+//        return 4;
+//    }
 
     if (!out_format_interface->SaveImage(out_path, image)) {
         cerr << "Saving failed"sv << endl;
